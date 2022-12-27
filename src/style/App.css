@@ -19,6 +19,22 @@ nav ul {
   padding: 0;
   width: 200px;
 }
+nav li #About {
+  color: white;
+  text-decoration: underline;
+  font-family: "Zen Dots";
+  font-size: 36px;
+  cursor: pointer;
+  border: none;
+  width: 200px;
+  text-align: justify;
+  background-color: rgba(45, 46, 46, 0.784);
+  transition: transform 200ms;
+  padding: 15px 17px;
+}
+nav li #About:hover {
+  transform: translateX(40px);
+}
 nav li a {
   display: block;
   color: white;
@@ -51,6 +67,18 @@ nav li a:visited {
   nav ul li {
     width: 100%;
     text-align: center;
+  }
+  nav ul li #About {
+    text-align: center;
+    color: white;
+    font-family: "Zen Dots";
+    font-size: 16px;
+    margin: 0;
+    width: 100%;
+    background-color: rgba(45, 46, 46, 0.784);
+  }
+  nav ul li #About:hover {
+    transform: none;
   }
   nav ul li a {
     color: white;

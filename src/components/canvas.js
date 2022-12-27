@@ -1,11 +1,11 @@
-import React, { useLayoutEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { randomRange, Agent, staticAgent, amtInit } from "../utils/utils";
 
 
 
 
-const Canvas = ({ height, width, contextToDraw, agentsToDraw, agentsToDrawSmall, resizeMe }) => {
+const Canvas = ({ height, width, contextToDraw, agentsToDraw, agentsToDrawSmall }) => {
 
     const canvas = React.useRef()
 
@@ -14,13 +14,13 @@ const Canvas = ({ height, width, contextToDraw, agentsToDraw, agentsToDrawSmall,
         const context = canvas.current.getContext('2d')
 
         const bigDot = []
-        for (var i = 0; i < 28; i++) {
+        for (let i = 0; i < 28; i++) {
             const x = randomRange(0, width)
             const y = randomRange(0, height)
             bigDot.push(new staticAgent(x, y))
         }
         const vertices = [];
-        for (var i = 0; i < amtInit; i++) {
+        for (let i = 0; i < amtInit; i++) {
             const x = randomRange(10, width)
             const y = randomRange(10, height)
             vertices.push(new Agent(x, y))
@@ -35,10 +35,7 @@ const Canvas = ({ height, width, contextToDraw, agentsToDraw, agentsToDrawSmall,
         }
         handleContext()
 
-    }, [])
-
-
-
+    })
 
     return (<>
         <canvas

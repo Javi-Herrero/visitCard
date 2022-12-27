@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import '../style/App.css'
 import Canvas from './canvas'
 import { params } from "../utils/utils";
@@ -19,10 +19,10 @@ function App() {
   const [bigDot, setbigDot] = useState([])
   const [vertices, setvertices] = useState([])
   const [coords, setCoords] = useState()
-  const [dimensions, setDimensions] = useState({
+  const dimensions = {
     height: 900,
     width: 1600
-  })
+  }
 
   const [infoCursor, setCursor] = useState({
     title: 'JAVI HERRERO',
@@ -55,7 +55,6 @@ function App() {
 
   const [canvas, setCanvas] = useState(
     <Canvas
-      //resizeMe={setDimensions}
       params={params}
       contextToDraw={setContext}
       agentsToDraw={setbigDot}

@@ -126,7 +126,7 @@ const DrawerAL = ({ context, bigDot, vertices, height, width, params, changeCurs
         return () => {
             window.removeEventListener('mousemove', getMouse)
         }
-    }, [context, cursorText, dimensions])
+    }, [context, cursorText, dimensions, getMouse])
 
 
 
@@ -168,7 +168,7 @@ const DrawerAL = ({ context, bigDot, vertices, height, width, params, changeCurs
         requestRef.current = requestAnimationFrame(animate);
         return () => cancelAnimationFrame(requestRef.current);
 
-    }, [context, cursorText, dimensions])
+    }, [context, cursorText, dimensions, animate])
 
     const bigDots = (context, coords, cursorText) => {
         isMobile ? coords = { X: innerWidth * .5, Y: innerHeight * .5 } : coords = coords
@@ -185,7 +185,7 @@ const DrawerAL = ({ context, bigDot, vertices, height, width, params, changeCurs
             agent.draw(context)
             agent.bounce(width, height, coords)
             let sizeDif = params.Maxsize - sizeInit
-            if (sizeDif != 0) {
+            if (sizeDif !== 0) {
                 vertices.forEach(agent => {
                     agent.resize(params.Maxsize)
                 })
@@ -244,7 +244,7 @@ const DrawerAL = ({ context, bigDot, vertices, height, width, params, changeCurs
             <nav>
                 <ul>
                     <li><a id='CV' href="./CV_Javier.pdf" download >CV</a></li>
-                    <li> <a id='About' href="#" onClick={clickToChangeState} >About</a></li>
+                    <li> <button type="button" id='About' onClick={clickToChangeState} >About</button ></li>
                     <li> <a id='More' href="https://reactapp-example.netlify.app/" target='blank'>More</a></li>
                 </ul>
             </nav >
