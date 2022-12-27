@@ -233,7 +233,20 @@ const DrawerAL = ({ context, bigDot, vertices, height, width, params, changeCurs
 
     });
 
-
+    const onCvClick = () => {
+        // using Java Script method to get PDF file
+        fetch("CV_Javier.pdf").then(response => {
+            response.blob().then(blob => {
+                // Creating new object of PDF file
+                const fileURL = window.URL.createObjectURL(blob);
+                // Setting various property values
+                let alink = document.createElement('a');
+                alink.href = fileURL;
+                alink.download = "CV_Javier.pdf";
+                alink.click();
+            })
+        })
+    }
 
 
     return (
@@ -243,7 +256,7 @@ const DrawerAL = ({ context, bigDot, vertices, height, width, params, changeCurs
                 href="https://fonts.googleapis.com/css2?family=Zen+Dots" />
             <nav>
                 <ul>
-                    <li><a id='CV' href="./CV_Javier.pdf" target='_blank' download >CV</a></li>
+                    <li><a id='CV' href="./CV_Javier.pdf" target='_blank' onClick={onCvClick}  >CV</a></li>
                     <li> <button type="button" id='About' onClick={clickToChangeState} >About</button ></li>
                     <li> <a id='More' href="https://reactapp-example.netlify.app/" target='blank'>More</a></li>
                 </ul>
