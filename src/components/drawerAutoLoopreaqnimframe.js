@@ -243,7 +243,7 @@ const DrawerAL = ({ context, bigDot, vertices, height, width, params, changeCurs
                 href="https://fonts.googleapis.com/css2?family=Zen+Dots" />
             <nav>
                 <ul>
-                    <li><a id='CV' href="./CV_Javier.pdf" target='_blank' >CV</a></li>
+                    <li><a id='CV' href="./CV_Javier.pdf" target='_blank' download >CV</a></li>
                     <li> <button type="button" id='About' onClick={clickToChangeState} >About</button ></li>
                     <li> <a id='More' href="https://reactapp-example.netlify.app/" target='blank'>More</a></li>
                 </ul>
