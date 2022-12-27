@@ -126,7 +126,7 @@ const DrawerAL = ({ context, bigDot, vertices, height, width, params, changeCurs
         return () => {
             window.removeEventListener('mousemove', getMouse)
         }
-    }, [context, cursorText, dimensions, getMouse])
+    }, [context, cursorText, dimensions])
 
 
 
@@ -168,7 +168,7 @@ const DrawerAL = ({ context, bigDot, vertices, height, width, params, changeCurs
         requestRef.current = requestAnimationFrame(animate);
         return () => cancelAnimationFrame(requestRef.current);
 
-    }, [context, cursorText, dimensions, animate])
+    }, [context, cursorText, dimensions])
 
     const bigDots = (context, coords, cursorText) => {
         isMobile ? coords = { X: innerWidth * .5, Y: innerHeight * .5 } : coords = coords
