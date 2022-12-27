@@ -1,0 +1,90 @@
+#root {
+    display: grid;
+    overflow: hidden;
+}
+
+#canvas {
+
+    background-color: rgba(37, 37, 37, 0.936);
+    cursor: none;
+
+
+}
+
+
+
+nav {
+    position: absolute;
+    top: 15vh;
+
+    ul {
+        position: fixed;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 200px;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        font-family: 'Zen Dots';
+        font-size: 36px;
+        padding: 15px 17px;
+        background-color: rgba(45, 46, 46, 0.784);
+        transition: transform 200ms;
+
+        &:hover {
+            transform: translateX(40px);
+        }
+
+        &:visited {
+            color: white;
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 960px) {
+    nav {
+        position: absolute;
+        top: 0;
+
+
+
+        ul {
+
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            justify-content: space-between;
+
+            li {
+                width: 100%;
+                text-align: center;
+
+                a {
+                    color: white;
+                    font-family: 'Zen Dots';
+                    font-size: 16px;
+                    // padding: 15px 17px;
+                    background-color: rgba(45, 46, 46, 0.784);
+
+                    &:visited {
+                        color: white;
+                    }
+
+                    &:hover {
+                        transform: none;
+                    }
+
+                }
+            }
+
+
+        }
+    }
+}
