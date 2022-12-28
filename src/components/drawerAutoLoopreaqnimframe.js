@@ -211,14 +211,16 @@ const DrawerAL = ({ context, bigDot, vertices, height, width, params, changeCurs
             }
         }
         context.globalCompositeOperation = bgText.position
-        context.font = '24px "myFont"'
-        context.fillStyle = textColor
         if (innerWidth <= 960) {
+            context.font = '16px "myFont"'
+            context.fillStyle = textColor
             context.fillText(bgText.txt1, innerWidth * .15, innerHeight * .25, innerWidth * .75)
             context.fillText(bgText.txt2, innerWidth * .15, innerHeight * .3, innerWidth * .75)
             context.fillText(bgText.txt3, innerWidth * .15, innerHeight * .35, innerWidth * .75)
 
         } else {
+            context.font = '24px "myFont"'
+            context.fillStyle = textColor
             context.fillText(bgText.txt1, innerWidth * .25, innerHeight * .25, innerWidth * .75)
             context.fillText(bgText.txt2, innerWidth * .25, innerHeight * .3, innerWidth * .75)
             context.fillText(bgText.txt3, innerWidth * .25, innerHeight * .35, innerWidth * .75)
@@ -234,16 +236,14 @@ const DrawerAL = ({ context, bigDot, vertices, height, width, params, changeCurs
     });
 
     const onCvClick = () => {
-        // using Java Script method to get PDF file
         fetch("CV_Javier.pdf").then(response => {
             response.blob().then(blob => {
-                // Creating new object of PDF file
                 const fileURL = window.URL.createObjectURL(blob);
-                // Setting various property values
-                let alink = document.createElement('a');
-                alink.href = fileURL;
-                alink.download = "CV_Javier.pdf";
-                alink.click();
+
+                let link = document.createElement('a');
+                link.href = fileURL;
+                link.download = "CV_Javier.pdf";
+                link.click();
             })
         })
     }
