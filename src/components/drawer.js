@@ -170,7 +170,7 @@ const Drawer = ({ context, bigDot, vertices, height, width, params }) => {
                 <ul>
                     <li><a href="CV_Javier.pdf" download >CV</a></li>
                     <li> <a href="#" onClick={aboutPointer}>About</a></li>
-                    <li> <a href="https://reactapp-example.netlify.app/" target='blank'>More</a></li>
+                    <li> <a href="https://realstatevueapp.netlify.app/" target='blank'>More</a></li>
                 </ul>
             </nav >
         </>
